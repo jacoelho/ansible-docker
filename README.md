@@ -1,25 +1,27 @@
-# jacoelho.elixir
+# jacoelho.docker
 
-[Ansible](http://www.ansible.com/) role: install erlang and elixir from the erlang repositories
+[Ansible](http://www.ansible.com/) role: install docker engine from the docker repositories
 
 ### Usage
 ```yaml
   roles:
-    - role: jacoelho.elixir
+    - role: jacoelho.docker
 ```
 
 ### Configuration
 
 ```yaml
-elixir_erlang_version
-elixir_version
+docker_bin
+docker_options
+docker_environment
+docker_users
 ```
 
 for example:
 
 ```yaml
-elixir_erlang_version: "17.5"
-elixir_version: "1.0.5"
+docker_options: "--graph /mnt/docker-data --storage-driver btrfs"
+docker_environment:
+  HTTP_PROXY: "http://proxy.example.com:80"
 ```
 
-[![Build Status](https://travis-ci.org/jacoelho/ansible-elixir.svg?branch=master)](https://travis-ci.org/jacoelho/ansible-elixir)
