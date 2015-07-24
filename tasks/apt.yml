@@ -1,0 +1,25 @@
+---
+
+- name: Docker | Add gpg key
+  apt_key:
+    keyserver: p80.pool.sks-keyservers.net
+    state: present
+    id: 58118E89F3A912897C070ADBF76221572C52609D
+
+- name: Docker | Add repository
+  apt_repository:
+    repo: "deb https://apt.dockerproject.org/repo {{ ansible_distribution | lower }}-{{ ansible_distribution_release }} main"
+    state: present
+
+- name: Docker | Install
+  apt:
+    name: docker-engine
+    update_cache: yes
+    cache_valid_time: 3600
+    state: present
+
+- name: Docker | Setup sysinit
+  template:
+    src: docker.j2
+    dest: /etc/default/docker
+

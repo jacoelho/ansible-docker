@@ -1,0 +1,14 @@
+---
+
+- name: Docker | Setup docker group
+  group:
+    name: docker
+    system: yes
+    state: present
+
+- name: Docker | Add user to docker group
+  user:
+    name: "{{ item }}"
+    groups: docker
+    append: yes
+  with_items: docker_users

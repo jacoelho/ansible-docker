@@ -1,0 +1,13 @@
+# Managed by Ansible, do not edit!
+# Docker Upstart and SysVinit configuration file
+
+# Customize location of Docker binary (especially for development testing).
+DOCKER="{{ docker_bin }}"
+
+# Use DOCKER_OPTS to modify the daemon startup options.
+DOCKER_OPTS="{{ docker_options }}"
+
+{% for key,value in docker_environment.iteritems() %}
+export {{ key }}="{{ value }}"
+{% endfor %}
+
