@@ -4,11 +4,6 @@
   sudo: yes
 
   roles:
-<<<<<<< HEAD
-    - role: jacoelho.elixir
-      elixir_erlang_version: 17.5
-=======
     - role: jacoelho.docker
       docker_users:
         - vagrant
->>>>>>> initial files

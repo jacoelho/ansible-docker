@@ -1,11 +1,6 @@
 ---
 
-<<<<<<< HEAD
-elixir_erlang_version: "18"
-elixir_version: "1.0.5"
-=======
 docker_bin: /usr/bin/docker
 docker_options: --ipv6
 docker_environment: {}
 docker_users: []
->>>>>>> initial files
