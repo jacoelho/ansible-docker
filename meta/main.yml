@@ -2,7 +2,7 @@
 
 galaxy_info:
   author: José Coelho
-  description: Installs erlang and elixir from erlang repositories
+  description: Installs docker from docker repositories
   license: MIT
   min_ansible_version: 1.9
   platforms:
